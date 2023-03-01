@@ -421,6 +421,25 @@
         margin-top: 0;
       }
     }
+    .timeline {
+      .local__data {
+        span {
+          font-size: 1.4rem;
+        }
+      }
+      .timeline__wrapper {
+        h3 {
+          font-size: 1.4rem;
+          line-height: 2rem;
+          .name {
+            font-size: 1.4rem;
+          }
+        }
+        .timeline__date {
+          font-size: 1.3rem;
+        }
+      }
+    }
   }
   .auth-page-container {
     align-items: flex-start;
