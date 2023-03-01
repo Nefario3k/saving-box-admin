@@ -1,0 +1,37 @@
+span.input-group-text.input-design {
+    border: 1px solid red;
+    border: 1px dashed #999C9F;
+    border-right: none;
+    background-color: rgba(0, 0, 0, 0.02);
+    ;
+    padding: .7rem;
+}
+
+input[type='file'] {
+    border: 1px dashed #999C9F;
+    border-left: none;
+    background-color: rgba(0, 0, 0, 0.02);
+    ;
+    color: #999C9F;
+    padding: .6rem;
+    border-radius: var(--normal-radius);
+    font-size: 1.6rem;
+}
+
+input::file-selector-button {
+    visibility: hidden;
+}
+
+/* Chrome, Edge & Safari */
+input::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+input[type='file']::before {
+    content: "Upload file";
+    display: inline-block;
+    border-radius: 3px;
+    padding: 5px 8px;
+    cursor: pointer;
+    color: black;
+}
