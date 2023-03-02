@@ -59,7 +59,7 @@
       <template v-slot:item.plan="{ item }">
         <div class="user_content">
           <div class="user_content_details">
-            <p class="view">Preview</p>
+            <p @click="showPanel('userDocs')" class="view">Preview</p>
           </div>
         </div>
       </template>
@@ -104,6 +104,7 @@
         </div>
       </template>
     </v-data-table>
+    <ViewUserDocs :pdfUrl="pdfUrl" ref="userDocs" />
   </div>
 </template>
 
@@ -145,16 +146,14 @@ export default {
           date: "22, Sept. 2022",
         },
       ],
+      pdfUrl: "/sample.pdf",
     };
   },
   methods: {
     showPanel(type) {
       switch (type) {
-        case "view":
-          this.$refs.adminView.showPanel();
-          break;
-        case "edit":
-          this.$refs.userEdit.showPanel();
+        case "userDocs":
+          this.$refs.userDocs.showPanel();
           break;
 
         default:
