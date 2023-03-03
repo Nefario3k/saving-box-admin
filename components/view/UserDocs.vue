@@ -61,15 +61,21 @@
           </div>
         </div>
         <!-- <div class="pdfContainer"> -->
-        <iframe
+        <object
           height="90%"
           width="100%"
           type="application/pdf"
           class="pdfContainer__object"
-          :src="pdfUrl"
+          :data="pdfUrl"
+          align="top"
           name="User Verification"
           title="Birth Certificate"
-        ></iframe>
+        >
+          <p>
+            Your web browser doesn't have a PDF plugin. Instead you can
+            <a download :href="pdfUrl">click here to download the PDF file.</a>
+          </p>
+        </object>
         <!-- </div> -->
       </div>
     </v-navigation-drawer>
