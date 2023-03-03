@@ -61,15 +61,15 @@
           </div>
         </div>
         <!-- <div class="pdfContainer"> -->
-        <object
+        <iframe
           height="90%"
           width="100%"
           type="application/pdf"
           class="pdfContainer__object"
-          :data="pdfUrl"
+          :src="pdfUrl"
           name="User Verification"
           title="Birth Certificate"
-        ></object>
+        ></iframe>
         <!-- </div> -->
       </div>
     </v-navigation-drawer>
