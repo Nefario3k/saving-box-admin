@@ -62,7 +62,7 @@
           </div>
 
           <section class="input__area update-form">
-            <div class="row">
+            <form @submit.prevent="createAdmin" class="row">
               <!-- fname  -->
               <div class="col-12">
                 <label for="adminFname" class="form-label label-design"
@@ -70,6 +70,7 @@
                 >
                 <input
                   type="text"
+                  required
                   class="form-control input-design"
                   id="adminFname"
                   placeholder="First name"
@@ -82,6 +83,7 @@
                 >
                 <input
                   type="text"
+                  required
                   class="form-control input-design"
                   id="adminLname"
                   placeholder="Last name"
@@ -94,6 +96,7 @@
                 >
                 <input
                   type="email"
+                  required
                   class="form-control input-design"
                   id="adminEmailInput"
                   placeholder="johndoe@gmail.com"
@@ -106,6 +109,7 @@
                 >
                 <input
                   type="number"
+                  required
                   class="form-control input-design"
                   id="adminPhoneNumber"
                   placeholder="234"
@@ -157,9 +161,11 @@
                 </v-menu>
               </div>
               <div style="margin-top: 130px" class="col-12">
-                <button class="btn btn-primary btn-design">Create</button>
+                <button type="submit" class="btn btn-primary btn-design">
+                  Create
+                </button>
               </div>
-            </div>
+            </form>
           </section>
         </div>
       </div>
@@ -209,6 +215,10 @@ export default {
       } else {
         this.elevation = 0;
       }
+    },
+    createAdmin() {
+      this.$emit("createAdmin");
+      this.showDrawer = false;
     },
   },
 };

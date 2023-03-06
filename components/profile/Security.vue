@@ -4,7 +4,7 @@
     <section class="update-form mt-8">
       <div class="row">
         <div class="col-12 col-md-6">
-          <div class="row">
+          <form @submit.prevent="$emit('showSuccess')" class="row">
             <!-- old password  -->
             <div class="col-12">
               <label for="oldPassword" class="form-label label-design"
@@ -12,6 +12,7 @@
               >
               <input
                 type="password"
+                required
                 class="form-control input-design"
                 id="oldPassword"
                 placeholder="****************"
@@ -24,6 +25,7 @@
               >
               <input
                 type="password"
+                required
                 class="form-control input-design"
                 id="newPassword"
                 placeholder="****************"
@@ -36,15 +38,18 @@
               >
               <input
                 type="password"
+                required
                 class="form-control input-design"
                 id="confirmPassword"
                 placeholder="****************"
               />
             </div>
             <div style="justify-content: flex-end" class="d-flex col-12">
-              <button class="btn btn-primary btn-design">Save</button>
+              <button type="submit" class="btn btn-primary btn-design">
+                Save
+              </button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </section>

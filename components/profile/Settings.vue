@@ -11,13 +11,14 @@
     <section class="update-form mt-8">
       <div class="row">
         <div class="col-12 col-md-6">
-          <div class="row">
+          <form @submit.prevent="$emit('showSuccess')" class="row">
             <div class="col-12">
               <label for="adminFname" class="form-label label-design"
                 >First Name</label
               >
               <input
                 type="text"
+                required
                 class="form-control input-design"
                 id="adminFname"
                 placeholder="First name"
@@ -29,6 +30,7 @@
               >
               <input
                 type="text"
+                required
                 class="form-control input-design"
                 id="adminLname"
                 placeholder="Last name"
@@ -40,6 +42,7 @@
               >
               <input
                 type="email"
+                required
                 class="form-control input-design"
                 id="adminEmailInput"
                 placeholder="johndoe@gmail.com"
@@ -51,15 +54,18 @@
               >
               <input
                 type="text"
+                required
                 class="form-control input-design"
                 id="adminPhoneNumber"
                 placeholder="234"
               />
             </div>
             <div style="justify-content: flex-end" class="d-flex col-12">
-              <button class="btn btn-primary btn-design">Save</button>
+              <button type="submit" class="btn btn-primary btn-design">
+                Save
+              </button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </section>

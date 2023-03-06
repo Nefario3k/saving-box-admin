@@ -62,7 +62,7 @@
           </div>
 
           <section class="input__area update-form">
-            <div class="row">
+            <form @submit.prevent="showSuccess" class="row">
               <!-- Plan Title  -->
               <div class="col-12">
                 <label for="planTitle" class="form-label label-design"
@@ -70,6 +70,7 @@
                 >
                 <input
                   type="text"
+                  required
                   class="form-control input-design"
                   id="planTitle"
                   placeholder="Plan Title"
@@ -82,6 +83,7 @@
                 >
                 <input
                   type="number"
+                  required
                   class="form-control input-design"
                   id="adminLname"
                   placeholder="Enter Amount (NGN) min of 500 Naira"
@@ -202,13 +204,31 @@
                 </v-menu>
               </div>
               <div style="margin-top: 130px" class="col-12">
-                <button class="btn btn-primary btn-design">Update</button>
+                <button type="submit" class="btn btn-primary btn-design">
+                  Update
+                </button>
               </div>
-            </div>
+            </form>
           </section>
         </div>
       </div>
     </v-navigation-drawer>
+    <StatusTile
+      :absolute="false"
+      :fixed="true"
+      :border="false"
+      :top="4"
+      :right="statusRight"
+      color="var(--green)"
+      header="Successful"
+      headerColor="#fff"
+      subtext="Savings Plan edited successfully"
+      subtextColor="#fff"
+      :svg="true"
+      svgStroke="var(--green)"
+      svgColor="#fff"
+      :index="12201"
+    />
   </div>
 </template>
 
@@ -217,6 +237,7 @@ export default {
   data() {
     return {
       showDrawer: false,
+      statusRight: -500,
       elevation: 0,
       width: 512,
     };
@@ -254,6 +275,12 @@ export default {
       } else {
         this.elevation = 0;
       }
+    },
+    showSuccess() {
+      this.statusRight = 4;
+      setTimeout(() => {
+        this.statusRight = -500;
+      }, 2000);
     },
   },
 };

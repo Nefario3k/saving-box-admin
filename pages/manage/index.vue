@@ -60,8 +60,24 @@
         </v-card>
       </div>
     </v-row>
-    <CreateAdmin ref="createAdmin" />
+    <CreateAdmin @createAdmin="createAdmin" ref="createAdmin" />
     <CreateRole ref="createRole" />
+    <StatusTile
+      :absolute="false"
+      :fixed="true"
+      :border="false"
+      :top="77"
+      :right="statusRight"
+      color="var(--green)"
+      header="Admin Created!"
+      headerColor="#fff"
+      subtext="Admin created successfully"
+      subtextColor="#fff"
+      :svg="true"
+      svgStroke="var(--green)"
+      svgColor="#fff"
+      :index="33"
+    />
   </div>
 </template>
 
@@ -71,6 +87,7 @@ export default {
     return {
       profileTab: null,
       paymentTab: null,
+      statusRight: -500,
     };
   },
   methods: {
@@ -86,6 +103,12 @@ export default {
         default:
           break;
       }
+    },
+    createAdmin() {
+      this.statusRight = 31;
+      setTimeout(() => {
+        this.statusRight = -500;
+      }, 2000);
     },
   },
   // page properties go here

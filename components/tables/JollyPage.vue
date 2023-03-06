@@ -1,5 +1,21 @@
 <template>
-  <div>
+  <div class="relative">
+    <StatusTile
+      :absolute="false"
+      :fixed="true"
+      :border="false"
+      :top="77"
+      :right="statusRight"
+      color="var(--green)"
+      header="Plan Deactivated"
+      headerColor="#fff"
+      subtext="Jollification Plan successfully deactivated"
+      subtextColor="#fff"
+      :svg="false"
+      svgStroke="var(--green)"
+      svgColor="#fff"
+      :index="33"
+    />
     <v-data-table
       :headers="headers"
       :mobile-breakpoint="766"
@@ -152,7 +168,10 @@
                   >Activate</v-list-item-title
                 >
               </v-list-item>
-              <v-list-item class="dropdown__list-item">
+              <v-list-item
+                @click="showPanel('disableJolly')"
+                class="dropdown__list-item"
+              >
                 <v-list-item-title class="dropdown__list-title"
                   >Deactivate</v-list-item-title
                 >
@@ -162,7 +181,7 @@
         </div>
       </template>
     </v-data-table>
-    <ViewDisableLoanPage ref="disableLoan" />
+    <ViewDisableJollyPage @showSuccess="showSuccess" ref="disableJolly" />
     <EditLoanPage ref="editSaving" />
   </div>
 </template>
@@ -172,6 +191,7 @@ export default {
   data() {
     return {
       selected: [],
+      statusRight: -500,
       headers: [
         {
           text: "JOLLIFICATION PLAN",
@@ -270,13 +290,19 @@ export default {
         case "editSaving":
           this.$refs.editSaving.showPanel();
           break;
-        case "disableLoan":
-          this.$refs.disableLoan.showPanel();
+        case "disableJolly":
+          this.$refs.disableJolly.showPanel();
           break;
 
         default:
           break;
       }
+    },
+    showSuccess() {
+      this.statusRight = 4;
+      setTimeout(() => {
+        this.statusRight = -500;
+      }, 2000);
     },
   },
 };

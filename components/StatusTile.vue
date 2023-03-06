@@ -1,7 +1,7 @@
 <template>
   <div
     :style="`background-color: ${color}; top: ${top}px; right: ${right}px;z-index: ${index}; border-bottom-color: ${borderColor}`"
-    :class="{ absolute: absolute, borderstyled: border }"
+    :class="{ absolute: absolute, borderstyled: border, fixed: fixed }"
     class="statusWrapper"
   >
     <svg
@@ -58,6 +58,7 @@ export default {
     "index",
     "border",
     "borderColor",
+    "fixed",
   ],
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="overflow-x: hidden" class="relative">
     <v-row class="row__content">
       <div class="col-12">
         <v-card color="#fff" class="profile__card">
@@ -13,25 +13,45 @@
             class="profile__card-tabs"
           >
             <v-tabs-slider color="var(--primary-color)"></v-tabs-slider>
-            <v-tab class="profile__card-tab"> Account </v-tab>
-            <v-tab class="profile__card-tab"> Security </v-tab>
+            <v-tab @click="statusRight = -500" class="profile__card-tab">
+              Account
+            </v-tab>
+            <v-tab @click="statusRight = -500" class="profile__card-tab">
+              Security
+            </v-tab>
           </v-tabs>
           <v-divider class="profile__card-divider"></v-divider>
 
           <!-- tab items  -->
           <v-tabs-items v-model="profileTab" class="profile__card-tabItems">
             <v-tab-item>
-              <ProfileSettings />
+              <ProfileSettings @showSuccess="showSuccess" />
             </v-tab-item>
 
             <v-tab-item>
               <!-- empty state -->
-              <ProfileSecurity />
+              <ProfileSecurity @showSuccess="showSuccess" />
             </v-tab-item>
           </v-tabs-items>
         </v-card>
       </div>
     </v-row>
+    <StatusTile
+      :absolute="false"
+      :fixed="true"
+      :border="false"
+      :top="77"
+      :right="statusRight"
+      color="var(--green)"
+      header="Success!"
+      headerColor="#fff"
+      subtext="Your changes was successfully saved"
+      subtextColor="#fff"
+      :svg="true"
+      svgStroke="var(--green)"
+      svgColor="#fff"
+      :index="33"
+    />
   </div>
 </template>
 
@@ -41,7 +61,16 @@ export default {
     return {
       profileTab: null,
       paymentTab: null,
+      statusRight: -500,
     };
+  },
+  methods: {
+    showSuccess() {
+      this.statusRight = 31;
+      setTimeout(() => {
+        this.statusRight = -500;
+      }, 2000);
+    },
   },
   // page properties go here
 };
