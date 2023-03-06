@@ -1878,3 +1878,29 @@
     }
   }
 }
+
+.statusWrapper {
+  display: flex;
+  align-items: center;
+  grid-gap: 8px;
+  width: max-content;
+  min-width: 27rem;
+  padding: 8px 22px 8px 16px;
+  border-radius: 10px;
+  transition: all 0.45s ease-in-out;
+  &.borderstyled {
+    border-bottom-width: 3px;
+    border-bottom-style: inset;
+  }
+  .status__text {
+    p {
+      font-weight: 600;
+      font-size: 1.6rem;
+      margin-bottom: 0;
+    }
+    span {
+      font-weight: 500;
+      font-size: 1.2rem;
+    }
+  }
+}

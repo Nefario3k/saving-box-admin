@@ -1,3 +1,12 @@
+@media (max-width: 959px) {
+  .auth__image {
+    display: none;
+  }
+  .auth-page-header {
+    text-align: center;
+  }
+}
+
 @media (max-width: 765px) {
   .row__content {
     padding: 12px;
@@ -446,15 +455,28 @@
     margin-top: 50px;
     .auth-page {
       padding: 0 12px;
+      align-items: flex-start;
+      padding-top: 25px;
       .auth-page-header {
+        .noLogo {
+          display: none;
+        }
         h1 {
           font-size: 2.5rem;
           margin: 0 auto;
           width: 85%;
+          &.notAuthH1 {
+            width: 100%;
+            margin: 0;
+            text-align: left;
+          }
         }
         p {
           &.twoFA {
             font-size: 1.4rem;
+          }
+          &.notAuthP {
+            text-align: left;
           }
         }
         a {
@@ -475,14 +497,19 @@
         }
       }
       .switch-token-method {
+        // text-align: center;
         margin-bottom: 50px;
         p {
           font-size: 1.4rem;
+          word-break: normal;
         }
         a {
           margin-top: 5px;
           font-size: 1.4rem;
         }
+      }
+      .verify {
+        max-width: 100%;
       }
     }
   }
