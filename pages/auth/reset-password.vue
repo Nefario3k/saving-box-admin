@@ -105,7 +105,7 @@
             <div class="row">
               <div class="col-12 py-0">
                 <div class="control__form otp__form">
-                  <v-otp-input length="4"></v-otp-input>
+                  <v-otp-input type="number" length="4"></v-otp-input>
                 </div>
               </div>
             </div>

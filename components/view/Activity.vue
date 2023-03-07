@@ -85,7 +85,7 @@
                 <span>IP Address:</span>
                 <span class="activityIp">192.158.1.38</span>
               </div>
-              <span class="dActivity">Download Activity</span>
+              <!-- <span class="dActivity">Download Activity</span> -->
             </div>
           </div>
         </div>

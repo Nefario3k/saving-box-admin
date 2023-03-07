@@ -199,6 +199,7 @@
 
 .otp__form .v-otp-input .v-input {
     flex: 0;
+    /* padding: 0; */
 }
 
 .otp__form .v-otp-input {
@@ -208,10 +209,11 @@
 
 .otp__form .theme--light.v-otp-input .v-input .v-input__control .v-input__slot {
     width: 5rem;
-    height: 5rem;
+    min-height: 5rem !important;
     border-radius: 8px;
-
+    margin-bottom: 0;
 }
+
 
 .otp__form .theme--light.v-text-field--outlined:not(.v-input--is-focused):not(.v-input--has-state)>.v-input__control>.v-input__slot fieldset {
     border: 1.5px solid var(--label-color);
@@ -231,6 +233,7 @@
     color: var(--primary-color);
     font-size: 2.8rem;
     font-weight: 500;
+    line-height: normal !important;
 }
 
 .form-text-section {

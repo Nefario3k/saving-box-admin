@@ -44,6 +44,7 @@
             <div class="col-12 py-0">
               <div class="control__form otp__form">
                 <v-otp-input
+                  type="number"
                   @finish="login"
                   v-model="tokenNUmber"
                   length="4"

@@ -97,11 +97,11 @@
                   >View All Activity</v-list-item-title
                 >
               </v-list-item>
-              <v-list-item class="dropdown__list-item">
+              <!-- <v-list-item class="dropdown__list-item">
                 <v-list-item-title class="dropdown__list-title"
                   >Download</v-list-item-title
                 >
-              </v-list-item>
+              </v-list-item> -->
             </v-list>
           </v-menu>
         </div>

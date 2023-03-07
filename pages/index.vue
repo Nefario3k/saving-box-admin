@@ -146,7 +146,7 @@
         <v-card class="listCard activeUserCard" flat color="#fff">
           <div>
             <div class="header">
-              <h3>Active Users</h3>
+              <h3>New Users</h3>
               <v-menu :nudge-bottom="3" offset-y>
                 <template v-slot:activator="{ on, attrs }">
                   <v-btn

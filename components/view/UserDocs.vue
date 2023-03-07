@@ -74,7 +74,7 @@
                 />
               </svg>
             </div>
-            <p>2 Pages . 256KB</p>
+            <p>2 Pages</p>
           </div>
         </div>
         <!-- <div class="pdfContainer"> -->
