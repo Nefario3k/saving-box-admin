@@ -210,7 +210,7 @@
             </nuxt-link>
           </v-list-item-title>
         </v-list-item-content>
-      </v-list-item-icon>
+      </v-list-item>
 
       <!-- Users  -->
       <v-list-item class="list_item">
@@ -336,7 +336,7 @@
                   fill="#999C9F"
                 />
               </svg>
-              <span> Users</span>
+              <span> Savings</span>
             </nuxt-link>
           </v-list-item-title>
         </v-list-item-content>
