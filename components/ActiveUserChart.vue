@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-tooltip :nudge-bottom="15" top color="#fff">
+    <v-tooltip content-class="listTool" :nudge-bottom="15" top color="#fff">
       <template v-slot:activator="{ on, attrs }">
         <div
           :style="`height: ${chartData.height}%`"
